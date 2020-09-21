@@ -1,5 +1,9 @@
 Feature: Rent-A-Cat listing
 
+As a user
+I want to see a listing of available cats in the rent-a-cat facility
+So that I can see what cats are available for rent.
+
 # This is a comment.  You can put comments anywhere in this file.
 
 Rule: When there are not cats, the listing is an empty string "".

@@ -1,5 +1,9 @@
 Feature: Rent-A-Cat renting
 
+As a user
+I want to rent a cat from my neighborhood rent-a-cat facility
+So that I can be less lonely during the pandemic.
+
 Background:
 Given a rent-a-cat facility
 And a cat with ID 1 and name "Jennyanydots"
