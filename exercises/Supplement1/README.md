@@ -99,7 +99,7 @@ be a link to a report in red font that looks like this:
 Copy and paste that link on a web browser and you should see a report that
 looks like the following:
 
-<img alt="Figure 1" src=img/cucumber_report.jpg width=600>
+<img alt="Cucumber Report" src=img/cucumber_report.png width=700>
 
 The green check marks indicate steps that have passed.  The red cross marks
 indicate steps that have failed.  The blue square marks indicate steps that
