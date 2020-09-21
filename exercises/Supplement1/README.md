@@ -6,9 +6,12 @@ Fall Semester 2020 - Supplementary Exercise 1
 
 ## Description
 
-In this exercise, we will test the Rent-A-Cat rental system software once more, but this time with BDD.  Please review the "Lecture 10 Supplement: BDD" slides if you haven't already.
+In this exercise, we will test the Rent-A-Cat rental system software once more,
+but this time with BDD.  Please review the "Lecture 10 Supplement: BDD" slides
+if you haven't already.
 
-We will use the Gherkin language to specify behaviors for Rent-A-Cat and use the Cucumber framework to test those behaviors.
+We will use the Gherkin language to specify behaviors for Rent-A-Cat and use
+the Cucumber framework to test those behaviors.
 
 # Prerequisites
 
@@ -20,10 +23,9 @@ Please install the Cucumber plug-in for Eclipse following these steps (recommend
 3. Install the "Cucumber Eclipse Plugin" that pops up in the search box.
 4. You will be asked to restart Eclipse to complete installation.  Please do so.
 
-Otherwise, you should be able to use the command line Maven tool to install the Cucumber plug-in.  But for that, you will need to install Maven first using the following link (not recommended):
-https://maven.apache.org/download.cgi
-
-You will modify two classes: **RentACatImpl.java** and **RentACatTest.java**.  The RentACatImpl class is an (incomplete) implementation of the Rent-A-Cat system.  The RentACatTest class is a JUnit unit test class that tests RentACatImpl.  All locations where you should add code is marked with // TODO comments.
+Otherwise, you should be able to use the command line Maven tool to install the
+Cucumber plug-in.  But for that, you will need to install Maven first using the
+following link (not recommended): https://maven.apache.org/download.cgi
 
 ## Running Cucumber Tests
 
@@ -108,9 +110,19 @@ you can track down the failure.
 
 ## What To Do
 
-Let's first start by completing src/main/java/RentACatImpl.java.  You can just copy the
-version that you completed for Exercise 2.  Just by doing that, many tests will
-pass now.  Try running it after copying the file and you will get:
+You will modify three files: **RentACatImpl.java**, **StepDefinitions.java**,
+and **rent_a_cat_return_cats.feature**.  The RentACatImpl class is the
+(incomplete) implementation of the Rent-A-Cat system.  The StepDefinitions
+class is the (incomplete) implementation of Cucumber steps corresponding to the
+Gherkin steps.  The rent_a_cat_return_cats.feature file is a description of the
+"return cat" feature in the Rent-A-Cat system written in the Gherkin language.
+All the places to modify have been marked by // TODO comments.
+
+### Updating RentACatImpl.java
+
+Let's first start by completing src/main/java/RentACatImpl.java.  You can just
+copy the version that you completed for Exercise 2.  Just by doing that, many
+tests will pass now.  Try running it after copying the file and you will get:
 
 ```
 ...
@@ -121,7 +133,11 @@ Tests run: 14, Failures: 5, Errors: 1, Skipped: 0
 Now we only have 5 failures and 1 errors.  All the tests in Feature: Rent-A-Cat
 listing (in the
 src/test/resources/edu/pitt/cs/cs1632/rent_a_cat_list_cats.feature file) pass.
-Most of the failures are from Feature: Rent-A-Cat renting.  Let's look at the
+Most of the failures are from Feature: Rent-A-Cat renting.  
+
+### Adding Steps in StepDefinitions.java for the "rent cats" Feature
+
+Let's look at the
 src/test/resources/edu/pitt/cs/cs1632/rent_a_cat_rent_cats.feature file to see
 what the problem is.  Well, the Gherkin feature description makes logical
 sense.  So it must be the Cucumber steps that implement the Gherkin steps that
@@ -131,13 +147,16 @@ can see all corresponding methods for each Gherkin step.  Some of the methods
 have the // TODO: Implement comment and the default action is to fail().  The
 failing methods are the ones used for the renting feature in Gherkin.  Replace
 fail() with the proper implementation of each method.  Observe how other steps
-were implemented to get hints.  After this, if you run Cucumber again, you will get:
+were implemented to get hints.  After this, if you run Cucumber again, you will
+get:
 
 ```
 ...
 Tests run: 14, Failures: 0, Errors: 1, Skipped: 0
 ...
 ```
+
+### Further Modifying StepDefinitions.java and User Story for the "rent cats" Feature
 
 So where did this error come from?  If you scroll up in the Cucumber output a
 little bit, you will see the following messages:
