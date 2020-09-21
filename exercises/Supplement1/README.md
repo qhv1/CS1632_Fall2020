@@ -229,6 +229,17 @@ IMPORTANT: Please keep the github private!
 
 ## GradeScope Feedback
 
+The feedback you get from the GradeScope autograder is based on the Cucumber
+summary output.  For example, if you get the following output:
+
+```
+...
+Tests run: 14, Failures: 9, Errors: 1, Skipped: 0
+...
+```
+
+There were 9 failures and 1 errors so the final score is: 14 - 9 - 1 = 4.
+
 ## Resources
 
 * Gherkin Syntax Reference:  
