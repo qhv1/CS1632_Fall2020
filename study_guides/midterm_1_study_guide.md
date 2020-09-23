@@ -19,7 +19,7 @@ The exam will consist of these types of questions:
   * Fill in the blank questions
   * Short answer questions (explain a concept, discuss pros/cons, etc.)
   * JUnit / Cucumber code tracing questions
-  * JUnit coding questions
+  * JUnit / Cucumber / Gherkin coding questions
 
 Here are the key topics to study in preparation for the test.
 
