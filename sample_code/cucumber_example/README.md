@@ -10,11 +10,13 @@ StepDefinitions.java.solution respectively.
 ## Running
 
 1. Running with Eclipse
-Open the existing project in Eclipse by doing File > Open Projects from File System and choosing the folder with this sample code.  Then choose the project package root at the Package Explorer and then do Run > Run As > Maven test.
+
+   Open the existing project in Eclipse by doing File > Open Projects from File System and choosing the folder with this sample code.  Then choose the project package root at the Package Explorer and then do Run > Run As > Maven test.
 
 1. Running on the command line
-At the root directory of the sample code where pom.xml is, do:
-```
-$ mvn test
-```
+
+   At the root directory of the sample code where pom.xml is, do:
+   ```
+   $ mvn test
+   ```
 
