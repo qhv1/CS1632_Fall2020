@@ -21,6 +21,9 @@ The exam will consist of these types of questions:
   * JUnit / Cucumber code tracing questions
   * JUnit / Cucumber / Gherkin coding questions
 
+If you want more practice with Gherkin / Cucumber, try this out:
+https://github.com/wonsunahn/CS1632_Fall2020/blob/master/sample_code/cucumber_example/
+
 Here are the key topics to study in preparation for the test.
 
 ## TESTING THEORY AND TERMINOLOGY
