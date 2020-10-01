@@ -97,7 +97,7 @@ AFIST = [_A Friendly Introduction to Software Testing_](software-quality-assuran
 
 * Class 1: In-class Supplementary Exercise 2: Property-based Testing (Due before Class 2 at 9:00 AM)
 
-* Class 2: Discuss Supplementary Exercise 2 / TopHat questions
+* Class 2: Student Self-care Day (NO CLASSES) 
 
 * Listen to lectures (TopHat questions due the following before Class 1 at 9:00 AM):
   * Static Analysis Part 1
@@ -107,7 +107,7 @@ AFIST = [_A Friendly Introduction to Software Testing_](software-quality-assuran
 
 * Class 1: In-class Exercise 4: Performance Testing (Due before Class 2 at 9:00 AM)
 
-* Class 2: Student Self-care Day (NO CLASSES) 
+* Class 2: Discuss Exercise 4 / TopHat questions
 
 * Listen to lectures (TopHat questions due the following before Class 1 at 9:00 AM):
   * Static Analysis Part 3
