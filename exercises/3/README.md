@@ -112,6 +112,8 @@ slides, but it's best to avoid it.
    button, and select "Add tests".  Make sure all tests are checked as shown in
 the below figure.  Press on the "Select" button.
 
+   <img alt="Test Suite" src=test-suite-selection.png width=700>
+   
 1. Click on the "Save project" button on the top right corner that looks like a
    floppy disk.  Save to file name "Reddit Cats.side" in the exercise root folder.
 
@@ -220,6 +222,15 @@ of your tests should pass.
 for a different webpage.  Now some tests should pass but some should fail.
 Specifically, FUN-JOIN-BUTTON-EXISTS and FUN-SEARCH-SMELLY-CAT should pass and
 the rest shold fail.
+
+You may be curious how I was able to run the tests on the GradeScope docker images when they most likely don't have displays to render the Chrome browser.  The Chrome webdriver, as well as other webdrivers, can be run in "headless" mode.  That is, the tests can be performed inside the web engine without having to actually display the page.  This is very common practice since in a work setting, testers will be running tests on server machines or even on the cloud in docker images like I did.  If you need to do this in the future, you can achieve this by passing options when creating the Chrome webdriver:
+
+```
+ChromeOptions options = new ChromeOptions();
+options.addArguments("--headless");
+options.addArguments("--disable-dev-shm-usage"); // overcome limited resource problems
+driver = new ChromeDriver(options);
+```
 
 ## Resources
 
