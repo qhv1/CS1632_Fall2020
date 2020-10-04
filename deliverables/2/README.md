@@ -92,7 +92,7 @@ number, add more unit tests in CoffeeMakerQuestTest.
 
 * Write at least one private method while implementing CoffeeMakerQuestImpl.
   Add at least one unit test that tests that private method at the very bottom
-of CoffeeMakerQuestTest.
+of CoffeeMakerQuestTest.  Use Java reflection to do this.
 
 * Coding style is also important for software quality in the long run (even
   though they are not technically defects as we learned).  In particular, a
