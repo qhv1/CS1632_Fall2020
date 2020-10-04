@@ -2,13 +2,17 @@
 
 ## Exercise 3
 
-For this assignment, you and a partner will write a systems-level, automated black-box tests for the Reddit website using the Selenium IDE.  Specifically, we are going to test the r/cats subreddit at:
+For this assignment, you and a partner will write a systems-level, automated
+black-box tests for the Reddit website using the Selenium IDE.  Specifically,
+we are going to test the r/cats subreddit at:
 
 https://www.reddit.com/r/cats/
 
 It was chosen because it is a nice safe subreddit which is policed pretty well.  Besides, it's cats.
 
-First, let's start by adding the Selenium IDE browser extension for your web browser by selecting "Chrome Download" or "Firefox Download" on the below website:
+First, let's start by adding the Selenium IDE browser extension for your web
+browser by selecting "Chrome Download" or "Firefox Download" on the below
+website:
 
 https://www.selenium.dev/selenium-ide/
 
@@ -16,13 +20,19 @@ Then, open Selenium IDE by clicking on the newly created browser extension with
 the "Se" symbol.  You should see a pop up window that looks very similar to the
 one shown on the lecture slides.
 
-Write a test case for each requirement listed in [requirements.md](requirements.md).
+## Task 1: Write test cases
 
-Remember, each test must end with an assertion!  The list of available assertions and other commands are available at:
+Write a test case for each requirement listed in
+[requirements.md](requirements.md).  Name each test case same as the
+requirement name (e.g. FUN-TITLE).  I'm asking you to do this for the purposes
+of GradeScope autograding.  Normally, you would use a more descriptive name.
+
+Remember, each test must end with an assertion!  The list of available
+assertions and other commands are available at:
 
 https://www.selenium.dev/selenium-ide/docs/en/api/commands
 
-## Assertion for each Test
+### Writing assertions for each Test
 
 You will want to use the below commands and assertions to test each of the requirements:
 
@@ -30,7 +40,14 @@ FUN-TITLE: "assert title"
 
 FUN-JOIN-BUTTON-EXISTS - "assert text"
 
-FUN-SIGNUP-LINK - "store attribute" followed by "assert".  You will be storing the attribute value to a Selenium variable and asserting on the value of that variable.  Now there is a defect in Selenium IDE with the "store attribute" command where the target selector button is disabled when it should be enabled.  A work around is to enter a command such as "assert text" or "click" which allows you to use the target selector, fill in the locator string using it, and then revert to "store attribute".  As I said, while Selenium web driver is very mature, Selenium IDE is a work in progress. :)
+FUN-SIGNUP-LINK - "store attribute" followed by "assert".  You will be storing
+the attribute value to a Selenium variable and asserting on the value of that
+variable.  Now there is a defect in Selenium IDE with the "store attribute"
+command where the target selector button is disabled when it should be enabled.
+A work around is to enter a command such as "assert text" or "click" which
+allows you to use the target selector, fill in the locator string using it, and
+then revert to "store attribute".  As I said, while Selenium web driver is very
+mature, Selenium IDE is a work in progress. :)
 
 FUN-SEARCH-SMELLY-CAT - "assert text"
 
@@ -38,7 +55,11 @@ FUN-RULE-3 - "assert text"
 
 FUN-RULES-11-ITEMS - "assert element present" for the 11th item; "assert element not present" for the locator for the 12th item.
 
-## Tips
+**Hint:** If you are really stuck, there is a solution project file [Reddit
+Cats Solution.side](Reddit%20Cats%20Solution.side) that you can open from
+Selenium IDE.  Take a peek but don't loiter!
+
+### Other Tips
 
 Sometimes your test case will not work as expected.  Here are a few hints on how to debug a problem:
 
@@ -47,7 +68,9 @@ Sometimes your test case will not work as expected.  Here are a few hints on how
 
 1. Select the test step that failed in the main test case window, and then
    select the Reference tab at the bottom pane of the IDE.  It will display
-usage instructions for that command.  Remember always, the first argument goes to the Target field and the second argument goes to the Value field, regardless of command.
+usage instructions for that command.  Remember always, the first argument goes
+to the Target field and the second argument goes to the Value field, regardless
+of command.
 
 1. Sometimes the target component of a test step is the problem.  The selector
    button tries to generate a locator string as best it can using xpath, css
@@ -77,20 +100,38 @@ conflicts is possible by using the technique I went over with the
 [Using\_Git](https://github.com/wonsunahn/CS1632_Fall2020/blob/master/lectures/Using_Git.pdf)
 slides, but it's best to avoid it.
 
-## Try this out
-
-Once you are done writing your Selenium test suite, let's try exporting a test
-suite in Selenium IDE to a Java JUnit test class.  Let's first try the "Export"
-feature with the [Reddit Cats.side](Reddit%20Cats.side) project file provided
-to you.  Save your current project and open the provided file.
-
-Then follow these instructions:
+## Task 2: Add test cases to test suite and save project
 
 1. Choose "Test Suites" from the left panel drop down menu.
-1. Right click on "RedditCats" (or click on the vertical-3-dot context menu button).
-1. Select "Export" in the context menu.
-1. Select "Java JUnit" in the list of language options and leave all checkboxes unchecked.
-1. Save the resulting file into "RedditCatsTest.java" in the current directory.
+
+1. There will already be a "Default Suite" there with possibly one or more tests.
+
+1. Right click on "Default Suite", or click on the vertical-3-dot context menu button, and select "Rename" and rename to "RedditCats".
+
+1. Right click on "RedditCats", or click on the vertical-3-dot context menu
+   button, and select "Add tests".  Make sure all tests are checked as shown in
+the below figure.  Press on the "Select" button.
+
+1. Click on the "Save project" button on the top right corner that looks like a
+   floppy disk.  Save to file name "Reddit Cats.side" in the exercise root folder.
+
+## Task 3: Export test suite to JUnit class
+
+Once you are done writing your Selenium test suite, let's try exporting the test
+suite in Selenium IDE to a Java JUnit test class.  Let's first try the "Export"
+feature with the [Reddit Cats Solution.side](Reddit%20Cats%20Solution.side) project file provided
+to you.  Save your current project and open the provided file.
+
+Follow these instructions:
+
+1. Right click on "RedditCats", or click on the vertical-3-dot context menu
+   button, and select "Export".
+
+1. Select "Java JUnit" in the list of language options and optionally check
+   "Include step descriptions as a separate comment" to generate more detailed
+comments.  Leave other boxes unchecked.
+
+1. Save the resulting file into "RedditCatsTest.java" in the src/ folder.
 
 You can now run the RedditCatsTest JUnit class using the provided
 [TestRunner.java](TestRunner.java) using one of the following scripts:
@@ -111,22 +152,21 @@ You can now run the RedditCatsTest JUnit class using the provided
    run.sh
    ```
 
-Note that the script only works if you have Chrome version 83 installed on your
+Note that the script only works if you have Chrome version 85 installed on your
 computer (the most recent version as of today).  If you have a different
-version of Chrome, you may have to update the chromedriver.exe in your
-respective OS folder (Windows / Mac / Linux) by downloading a new Chrome Web
-Driver from:
+version of Chrome, you may have to update the chromedriver.exe (or
+chromedriver) in your respective OS folder (Windows / Mac / Linux) by
+downloading a new Chrome Web Driver from:
 
 https://chromedriver.chromium.org/downloads
 
+Your Chrome version can be obtained by clicking on the vertical-3-dot menu at
+the top right corner of your browser, then Help > About Google Chrome.
+
 If things go properly, you will see the Chrome browser pop up repeatedly for
 each test case, perform the actions, and close.  In the command line, you
-should see "ALL TESTS PASSED" as usual.
-
-You may optionally try now opening your own Selenium IDE project file and
-exporting your test suite.  You will have to export your JUnit test to the file
-RedditCatsTest.java like I did, or you may have to modify TestRunner.java so
-that it runs your test class.
+should see "ALL TESTS PASSED", which is printed by TestRunner if there are no
+failures.
 
 There are multiple reasons why you would want to export to JUnit:
 
@@ -146,13 +186,40 @@ not explore this option today.
 
 ## Submission
 
-There is no submission for this exercise.  Please practice until you have
-gained confidence.
- 
-My solution test cases are stored as the [Reddit Cats.side](Reddit%20Cats.side)
-file afore mentioned.  Compare with your test cases and see if you implemented
-them correctly.  It is in JSON format so you should be able to open it with a
-text editor and trace it with your eyes, if that's what you prefer.
+Each pairwise group will submit the exercise *once* to GradeScope, by *one
+member* of the group.  The submitting member will press the "View or edit
+group" link at the top-right corner of the assignment page after submission to
+add his/her partner, as usual.  
+
+When you are done, submit your github repository to GradeScope at the "Exercise
+3 GitHub" link.  Once you submit, GradeScope will run the autograder to grade
+you and give feedback.  If you get deductions, fix your code based on the
+feedback and resubmit.  Repeat until you don't get deductions.
+
+You can either create a GitHub repository just for Exercise 3 and then submit
+that.  Or, you may just directly upload files.  If you choose the latter
+option, please make sure you upload the "Reddit Cats.side" and
+"RedditCatsTest.java" files.
+
+My solution test cases are stored as the [Reddit Cats
+Solution.side](Reddit%20Cats%20Solution.side) file afore mentioned.  Compare
+with your test cases and see if you implemented them correctly.  It is in JSON
+format so you should be able to open it with a text editor and trace it with
+your eyes, if that's what you prefer.
+
+## GradeScope Feedback
+
+The GradeScope autograder works in 2 phases:
+
+1. **RedditCatsTest on https://www.reddit.com/r/cats**: This tests your
+   RedditCatsTest.java file on the cats subreddit as originally intended.  All
+of your tests should pass.
+
+1. **RedditCatsTest on https://www.reddit.com/r/dogs**: This tests your
+   RedditCatsTest.java file on the dogs subreddit, repeating the same steps but
+for a different webpage.  Now some tests should pass but some should fail.
+Specifically, FUN-JOIN-BUTTON-EXISTS and FUN-SEARCH-SMELLY-CAT should pass and
+the rest shold fail.
 
 ## Resources
 
