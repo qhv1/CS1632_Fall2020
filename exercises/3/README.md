@@ -204,8 +204,9 @@ not explore this option today.
    
 1. If you want to run your Selenium tests on Eclipse using the "Run JUnit" feature, you will have to also add this line to the beginning of the @Before setUp() method:
    ```
-   System.setProperty("webdriver.chrome.driver", "Windows/chromedriver.exe");  // Or whatever the path is to your OS compatible chromedriver.
+   System.setProperty("webdriver.chrome.driver", "Windows/chromedriver.exe");
    ```
+   Or whatever the path is to your OS compatible chromedriver.
 
 ## Submission
 
