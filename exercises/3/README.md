@@ -120,9 +120,7 @@ the below figure.  Press on the "Select" button.
 ## Task 3: Export test suite to JUnit class
 
 Once you are done writing your Selenium test suite, let's try exporting the test
-suite in Selenium IDE to a Java JUnit test class.  Let's first try the "Export"
-feature with the [Reddit Cats Solution.side](Reddit%20Cats%20Solution.side) project file provided
-to you.  Save your current project and open the provided file.
+suite in Selenium IDE to a Java JUnit test class.  
 
 Follow these instructions:
 
@@ -133,7 +131,7 @@ Follow these instructions:
    "Include step descriptions as a separate comment" to generate more detailed
 comments.  Leave other boxes unchecked.
 
-1. Save the resulting file into "RedditCatsTest.java" in the src/ folder.
+1. Save the resulting file into "RedditCatsTest.java".
 
 You can now run the RedditCatsTest JUnit class using the provided
 [TestRunner.java](TestRunner.java) using one of the following scripts:
