@@ -89,6 +89,8 @@ AFIST = [_A Friendly Introduction to Software Testing_](software-quality-assuran
 
 * Deliverable 2 due Oct. 5 at 9:00 AM
 
+* Deliverable 3 released due Oct. 19 at 9:00 AM
+
 * Listen to lectures (TopHat questions due the following before Class 1 at 9:00 AM):
   * Performance Testing (READING: AFIST, Chapter 19)
   * Stochastic and Property-Based Testing (READING: AFIST, Chapter 18)
@@ -108,6 +110,8 @@ AFIST = [_A Friendly Introduction to Software Testing_](software-quality-assuran
 * Class 1: In-class Exercise 4: Performance Testing (Due before Class 2 at 9:00 AM)
 
 * Class 2: Discuss Exercise 4 / TopHat questions
+
+* Deliverable 3 due Oct. 19 at 9:00 AM
 
 * Listen to lectures (TopHat questions due the following before Class 1 at 9:00 AM):
   * Static Analysis Part 3
