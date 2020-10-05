@@ -32,7 +32,7 @@ assertions and other commands are available at:
 
 https://www.selenium.dev/selenium-ide/docs/en/api/commands
 
-### Writing assertions for each Test
+### Tips for Writing assertions for each Test
 
 You will want to use the below commands and assertions to test each of the requirements:
 
@@ -183,6 +183,28 @@ IDE, you can touch it up in the form of exported Java code.
    Selenium Grid which can run the test cases in parallel.  This can allow you
 to utilize a server farm to finish your testing very quickly, although we will
 not explore this option today.
+
+### Tips for JUnit + Selenium problem solving
+
+1. Often problems that are not apparent in the Selenium IDE commands become apparent in the Java code.  Read the Java code to detect problems.
+
+1. One common problem with Selenium is that it takes a long time for certain web pages or web elements to load and if Selenium proceeds with testing immediately after opening a page, the tests will fail.  So Selenium provides APIs to allow you to wait until an event happens (e.g. the element is loaded).  All the details about which APIs to use on which situations is in the page:
+
+   https://www.selenium.dev/documentation/en/webdriver/waits/
+   
+   For your purposes, an implicit wait setting at the beginning should be enough.  Insert the following line in the @Before setUp() method:
+   ```
+   driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+   ```
+   In order to use that line, you will need to also import this library:
+   ```
+   import java.util.concurrent.TimeUnit;
+   ```
+   
+1. If you want to run your Selenium tests on Eclipse using the "Run JUnit" feature, you will have to also add this line to the beginning of the @Before setUp() method:
+   ```
+   System.setProperty("webdriver.chrome.driver", "Windows/chromedriver.exe");  // Or whatever the path is to your OS compatible chromedriver.
+   ```
 
 ## Submission
 
