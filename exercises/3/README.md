@@ -200,6 +200,7 @@ not explore this option today.
    ```
    import java.util.concurrent.TimeUnit;
    ```
+   What that does is: for every step, if the corresponding element is missing, it inserts an implicit wait of 10 seconds before signaling a failure.
    
 1. If you want to run your Selenium tests on Eclipse using the "Run JUnit" feature, you will have to also add this line to the beginning of the @Before setUp() method:
    ```
