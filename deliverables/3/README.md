@@ -180,7 +180,7 @@ The GradeScope autograder works in 2 phases:
    on the D3 website as originally intended.  All of your tests should pass.
 
 1. **D3Test on https://cs1632-buggier.appspot.com/**: This tests your
-   D3Test.java on a buggier version of the D3 website.  Now all tests should fail.
+   D3Test.java on an even buggier version of the D3 website.  To do this, all your URLs are changed to the buggier website.  Now all tests should fail.
 
 If you get deductions, both websites are available to you, so try them out
 yourself.
