@@ -1,5 +1,8 @@
 # CS 1632 - Software Quality Assurance
 
+* DUE: Oct 7, 2020 09:00 AM (Mon/Wed class)
+* DUE: Oct 8, 2020 09:00 AM (Tue/Thu class)
+
 ## Exercise 3
 
 For this assignment, you and a partner will write a systems-level, automated
