@@ -191,6 +191,12 @@ not explore this option today.
 
 1. Often problems that are not apparent in the Selenium IDE commands become apparent in the Java code.  Read the Java code to detect problems.
 
+1. If you want to run your Selenium tests on Eclipse using the "Run JUnit" feature, you will have to also add this line to the beginning of the @Before setUp() method:
+   ```
+   System.setProperty("webdriver.chrome.driver", "Windows/chromedriver.exe");
+   ```
+   Or whatever the path is to your OS compatible chromedriver.
+
 1. One common problem with Selenium is that it takes a long time for certain web pages or web elements to load and if Selenium proceeds with testing immediately after opening a page, the tests will fail.  So Selenium provides APIs to allow you to wait until an event happens (e.g. the element is loaded).  All the details about which APIs to use on which situations is in the page:
 
    https://www.selenium.dev/documentation/en/webdriver/waits/
@@ -204,12 +210,19 @@ not explore this option today.
    import java.util.concurrent.TimeUnit;
    ```
    What that does is: for every step, if the corresponding element is missing, it inserts an implicit wait of 10 seconds before signaling a failure.
-   
-1. If you want to run your Selenium tests on Eclipse using the "Run JUnit" feature, you will have to also add this line to the beginning of the @Before setUp() method:
+
+1. Another common problem is that depending on the browser window size, certain elements may disappear.  For example, the Reddit site would hide the "rules" bar on the right hand side if the windows is too narrow.  One way to solve this is to uniformly set the window size at the setUp() method so that all your tests will have the correct size:
    ```
-   System.setProperty("webdriver.chrome.driver", "Windows/chromedriver.exe");
+   driver.manage().window().setSize(new Dimension(1200, 800));
    ```
-   Or whatever the path is to your OS compatible chromedriver.
+   And remove all calls to setSize in your test cases.
+
+1. Lastly, there is a quirk with the Reddit website that I only found out recently.  The following two websites are very different websites:
+   ```
+   https://www.reddit.com/r/cats/
+   https://www.reddit.com//r/cats/
+   ```
+   You'd be surprised!  Make sure you are accessing the former and not the latter.
 
 ## Submission
 
