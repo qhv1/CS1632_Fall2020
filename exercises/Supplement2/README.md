@@ -41,7 +41,7 @@ StringOpsTest.java - A QuickCheck JUnit class that performs property-based testi
 
 ABCStringGenerator.java - A QuickCheck generator class that generates random strings containing the characters 'A', 'B', and 'C'.
 
-HTMLStringGenerator.java - A QuickCheck generator class that generates random strings containing HTML tags such as <b>, </b>, <i>, </i> (**modify**).
+ValidHTMLStringGenerator.java - A QuickCheck generator class that generates random valid HTML strings containing HTML tags such as <b>, </b>, <i>, </i> (**modify**).
 
 TestRunner.java - Driver class that contains the main method to invoke JUnit on IntegerOpsTest and StringOpsTest.
 
@@ -71,7 +71,7 @@ modify are marked by // TODO comments.  Pay close attention to the Javadoc
 comment above each method that describes what each method does, or is supposed
 to do.
 
-### IntegerOpsTest
+## Task 1: Complete IntegerOpsTest
 
 Open IntegerOpsTest.java.  Look at the testAdd method:
 
@@ -157,6 +157,8 @@ testAdd x='954712259', y='1056406418'
 You can see how QuickCheck is methodically doing the trial-and-error behind the
 scenes, so that you don't have to do it.
 
+## Task 2: Debug IntegerOps
+
 Now debug IntegerOps.add(int x, int y) so that the test passes.  All you have
 to do is: if you detect integer overflow (you add two positive numbers but you
 end up with a negative number), then return 0.
@@ -176,7 +178,7 @@ of two positive integer should result in a positive integer.
    set of input values triggering the defect, but it also "shrinks" them to the
 smallest set of defect-triggering values meant to help you debug.
 
-### StringOpsTest
+## Task 3: Complete StringOpsTest testEquals method
 
 Open StringOpsTest.java.  Look at the testEquals method:
 
@@ -198,10 +200,10 @@ are identical up to that point, equals will return true.  That cannot be
 correct behavior.
 
 Why wasn't the defect caught during the 1000 trials?  That is because the
-defect manifests only when s1 and s2 fit a certain pattern (they are identical
-up to a certain point).  And given uniform distribution, it is very unlikely
-that s1 and s2 will show any resemblance whatsoever.  If you uncomment
-System.out.println and observe the strings passed, you will see what I mean.
+defect manifests only when s1 and s2 fit a certain pattern (one is a substring
+of the other).  And given uniform distribution, it is very unlikely that s1 and
+s2 will show any resemblance whatsoever.  If you uncomment System.out.println
+and observe the strings passed, you will see what I mean.
 
 That means we have to generate a distribution more likely to uncover the
 defect.  Remember in Lecture 14, I stressed that stochastic testing requires a
@@ -261,16 +263,13 @@ testEquals s1='', s2='ABC'
 testEquals s1='', s2='A'
 testEquals s1='', s2=''
 ```
+## Task 4: Debug StringOps equals method
+
+Fix equals() based on the feedback given by QuickCheck.
+
+## Task 5: Complete ValidHTMLStringGenerator doShrink method
 
 Now it's time to look at the testIsValidHTML method:
-
-```
-@Property(trials = 1000)
-public void testIsValidHTML(String s) {
-	// System.out.println("testIsValidHTML s='" + s + "'");
-	// TODO: Fill in.
-}
-```
 
 Again, fill in according to the Javadoc comment.  But even after filling in the
 test, the test never fails due to the uniform distribution.  The method only
@@ -281,17 +280,43 @@ generator just like before, namely the HTMLStringGenerator.
 
 ```
 @Property(trials = 1000)
-public void testIsValidHTML(@From(HTMLStringGenerator.class) String s) {
-	...
+public void testIsValidHTML(@From(ValidHTMLStringGenerator.class) String s) {
+	// System.out.println("testIsValidHTMLTrue s='" + s + "'");
+	assertTrue(StringOps.isValidHTML(s));
 }
 ```
 
-HTMLStringGenerator is incomplete as of now.  Fill in the generate and doShrink
-methods after reading the comments and comparing against ABCStringGenerator.
-HTMLStringGenerator generates a random sequence of HTML tags which is much more
-likely to show good coverage compared to the uniform distribution.  After
-properly implementing, the above test should start to fail.  Debug
-StringOps.isValidHTML so that now all tests pass.
+ValidHtmlStringGenerator generates randomized HTML strings with matching
+<b>...</b> and <i>...</i> tags.  All strings passed by this generator are valid
+HTML so the invariant is that they all return true when
+StringOps.isValidHTML(s) is called.  ValidHtmlStringGenerator is another custom
+generator that is able to rigorously test your program by generating random but
+only valid HTML strings.  If you run the above, you will immediately see a
+failure.  But the failed input is probably going to be too long for easy
+debugging.  That is because the doShrink method is incomplete as of now.
+Currently, it returns an empty list of candidates meaning that the candidate
+search ends immediately and the original string is not shrunk.
+
+Fill in the doShrink method after reading the comments and comparing against
+ABCStringGenerator.  If you implement this properly, you should see something
+like this on the console:
+
+```
+testIsValidHTMLTrue s='<i><i><i></i></i><b><i><i></i></i><b><i></i><i></i></b></b></i>'
+testIsValidHTMLTrue s='<i><i></i><b><i><i></i></i><b><i></i><i></i></b></b></i>'
+testIsValidHTMLTrue s='<i><b><i><i></i></i><b><i></i><i></i></b></b></i>'
+testIsValidHTMLTrue s='<i><b><i></i><b><i></i><i></i></b></b></i>'
+testIsValidHTMLTrue s='<i><b><b><i></i><i></i></b></b></i>'
+testIsValidHTMLTrue s='<i><b><b><i></i></b></b></i>'
+testIsValidHTMLTrue s='<i><b><b></b></b></i>'
+testIsValidHTMLTrue s='<i><b></b></i>'
+testIsValidHTMLTrue s='<i></i>'
+testIsValidHTMLTrue s=''
+```
+
+## Task 6: Debug StringOps isValidHTML method
+
+Debug StringOps.isValidHTML based on the feedback so that now all tests pass.
 
 ### StringOpsTest Lessons
 
@@ -310,15 +335,9 @@ than generating them separately.
 
 ## Submission
 
-You will create a GitHub repository just for Exercise 6.  Add your partner as a
-collaborator so both of you have access.  Make sure you keep the repository
-*PRIVATE* so that nobody else can access your repository.  Once you are done
-modifying code, don't forget to commit and push your changes to the repository.
-When you are done, submit your repository to GradeScope at the "Exercise 6
-GitHub" link.  
-
-Please submit by Friday (7/10) 06:00 PM to get timely feedback.
-
-## Extra Credit
-
-I am cooking up an extra credit related to this exercise.  I will announce it by the end of the week.
+You will create a GitHub repository just for Supplementary Exercise 2.  Add
+your partner as a collaborator so both of you have access.  Make sure you keep
+the repository *PRIVATE* so that nobody else can access your repository.  Once
+you are done modifying code, don't forget to commit and push your changes to
+the repository.  When you are done, submit your repository to GradeScope at the
+"Supplementary Exercise 2 GitHub" link.  

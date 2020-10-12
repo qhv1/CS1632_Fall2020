@@ -38,8 +38,18 @@ public class StringOps {
 			} else if (s.startsWith("</b>", i) || s.startsWith("</i>", i)) {
 				if (stack.empty()) {
 					return false;
+				}
+				if (s.startsWith("</b>", i)) {
+					String top = stack.pop();
+					if (!top.equals("<b>")) {
+						return false;
+					}
 				} else {
-					stack.pop();
+					assert s.startsWith("</i>", i);
+					String top = stack.pop();
+					if (!top.equals("<i>")) {
+						return false;
+					}
 				}
 			}
 		}
