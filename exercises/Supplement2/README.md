@@ -1,8 +1,8 @@
 # CS 1632 - Software Quality Assurance
 Fall Semester 2020 - Supplementary Exercise 2
 
-* DUE: Oct 14, 2020 09:00 AM (Mon/Wed class)
-* DUE: Oct 15, 2020 09:00 AM (Tue/Thu class)
+* DUE: Oct 19, 2020 09:00 AM (Mon/Wed class)
+* DUE: Oct 20, 2020 09:00 AM (Tue/Thu class)
 
 ## Description
 
