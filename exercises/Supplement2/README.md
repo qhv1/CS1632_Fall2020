@@ -341,3 +341,7 @@ the repository *PRIVATE* so that nobody else can access your repository.  Once
 you are done modifying code, don't forget to commit and push your changes to
 the repository.  When you are done, submit your repository to GradeScope at the
 "Supplementary Exercise 2 GitHub" link.  
+
+The autograder will test your updated IntegerOpsTest, StringOpsTest, and
+ValidHTMLStringGenerator classes against the original IntegerOps and StringOps
+classes.  Since we are testing against the original classes before debugging, we expected all tests to fail, if you have done the work.
