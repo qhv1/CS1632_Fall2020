@@ -218,10 +218,8 @@ not explore this option today.
    And remove all calls to setSize in your test cases.
 
 1. Lastly, there is a quirk with the Reddit website that I only found out recently.  The following two websites are very different websites:
-   ```
-   https://www.reddit.com/r/cats/
-   https://www.reddit.com//r/cats/
-   ```
+   * https://www.reddit.com/r/cats/
+   * https://www.reddit.com//r/cats/
    You'd be surprised!  Make sure you are accessing the former and not the latter.
 
 ## Submission
