@@ -185,12 +185,13 @@ The report should have a title page with:
 ON A SEPARATE PAGE, write a brief report on the first feature you optimized.
 Write the name of the feature, the methods you refactored, and a VisualVM
 screenshot of method "Hot spots" *after* the refactoring.  Please only include
-the "Hot spots" window in the interest of space.
+the "Hot spots" window in the interest of space.  Please refer to Exercise 4 on
+how the Hot spots window looks like.
 
 ON A SEPARATE PAGE, write a brief report on the second feature you optimized.
 Write the name of the feature, the methods you refactored, and a VisualVM
 screenshot of method "Hot spots" *after* the refactoring.  Please take care not
-to include any other feature in the profile (including the first feature).
+to click on any other feature while profiling (including the first feature).
 
 There are two features with performance problems as I mentioned (as in two
 buttons).  Make sure you include both of them.  One feature has two problematic
