@@ -77,9 +77,9 @@ This code runs MonkeySim, which simulates a group of monkeys throwing a banana b
 
 * If monkey #1 catches the banana, the system shall display the number of rounds it took for Monkey #1 to catch the banana and then the program shall exit.
 
-* At each round, the current status of who is doing the throwing and who is catching shall be displayed, along with the round number (which should start at 1).  It should use the following format: "Round 1: Threw banana from Monkey (#54 / ID 223546) to Monkey (#27 / ID 223519)"
+* At each round, the current status of who is doing the throwing and who is catching shall be displayed, along with the round number (which shall start at 1).  It shall use the following format: "Round 1: Threw banana from Monkey (#54 / ID 223546) to Monkey (#27 / ID 223519)", where #54 and #27 are the monkey numbers, and 223546 and 223519 are the monkey IDs.
 
-* Each monkey has an ID; this ID shall remain constant.  For instance, Monkey #5 shall always have ID 223497, and Monkey #160 shall always have ID 223652.  Any changes to the code should not modify the ID value.
+* Each monkey shall have an ID; this ID shall remain constant.  For instance, Monkey #54 shall always have ID 223546, and Monkey #27 shall always have ID 223519.  Any changes to the code should not modify the ID value.
 
 Sample runs are shown in the [sample_runs.txt](sample_runs.txt) file.  For
 those of you who are interested, MonkeySim is a simulation of the Collatz
