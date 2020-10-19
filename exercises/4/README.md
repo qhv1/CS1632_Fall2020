@@ -264,11 +264,11 @@ run the autograder to grade you and give feedback.  If you get deductions, fix
 your code based on the feedback and resubmit.  Repeat until you don't get
 deductions. Don't forget to add your partner to the submission.
 
-1. Create a screenshot of the VisualVM profiling result running MonkeySim with argument 27 and name it profile.png. Example:
+1. Create a screenshot of the VisualVM Hotspots panel after running MonkeySim with argument 27 and name it hotspots.png. Example:
 
-   ![alt text](profile.png "VisualVM snapshot after optimizations")
+   ![alt text](hotspots.png "Hotspots panel after optimizations")
 
-   Make sure the "Hot spots" window is activated listing the methods sorted in descending order of running time (Self Time).
+   Make sure the "Hot spots" window lists the methods sorted in descending order of running time (Self Time).
 
    After you have created the screenshot, save the picture to a PDF file and
 submit to GradeScope at the "Exercise 4 Profile" link.  Make sure the picture
