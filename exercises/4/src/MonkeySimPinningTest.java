@@ -6,13 +6,13 @@ import org.junit.runner.RunWith;
 import org.junit.*;
 import org.junit.runners.MethodSorters;
 import static org.junit.Assert.*;
-import static org.mockito.Mockito.*;
 
 import java.util.LinkedList;
 import java.util.List;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class MonkeySimPinningTest {
+	MonkeySim ms;
 	MonkeyWatcher mw;
 	List<Monkey> ml;
 	private ByteArrayOutputStream out = new ByteArrayOutputStream();
@@ -40,6 +40,7 @@ public class MonkeySimPinningTest {
 		// Initialize the test fixture. Note that we are creating real objects, not mock
 		// objects, even for external classes. Hence, we are de facto using systems
 		// testing instead of unit testing for the pinning tests.
+		ms = new MonkeySim();
 		ml = new LinkedList<Monkey>();
 		Banana b = new Banana();
 		mw = new MonkeyWatcher();
@@ -58,33 +59,33 @@ public class MonkeySimPinningTest {
 
 	@Test
 	public void testGetFirstMonkey() {
-		Monkey m = MonkeySim.getFirstMonkey(ml);
+		Monkey m = ms.getFirstMonkey(ml);
 		assertNotNull("getFirstMonkey returns null", m);
 		assertEquals("getFirstMonkey returns a monkey with monkey != 1", 1, m.getMonkeyNum());
 	}
 
 	@Test
 	public void testNextMonkeyAndResizeTo16() {
-		MonkeySim.nextMonkeyAndResize(ml.get(5), ml);
+		ms.nextMonkeyAndResize(ml.get(5), ml);
 		assertEquals("Monkey list size not 17 after resizing to monkey 16", 17, ml.size());
 	}
 
 	@Test
 	public void testStringifyResults() {
-		String ret = MonkeySim.stringifyResults(5, ml.get(2), ml.get(1));
+		String ret = ms.stringifyResults(5, ml.get(2), ml.get(1));
 		assertEquals("Defect when stringifying round 5, monkey 2, monkey 1",
 				"//Round 5: Threw banana from Monkey (#2 / ID 223494) to Monkey (#1 / ID 223493)", ret);
 	}
 
 	@Test
 	public void testMonkeyWithBanana() {
-		int ret = MonkeySim.monkeyWithBanana(ml);
+		int ret = ms.monkeyWithBanana(ml);
 		assertEquals(5, ret);
 	}
 
 	@Test
 	public void testArgument5RunSimulation() {
-		MonkeySim.runSimulation(ml, mw);
+		ms.runSimulation(ml, mw);
 		String nl = System.getProperty("line.separator");
 		assertEquals("Defect in the output for running simulation with argument 5",
 				"//Round 1: Threw banana from Monkey (#5 / ID 223497) to Monkey (#16 / ID 223508)" + nl

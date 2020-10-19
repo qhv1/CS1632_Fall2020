@@ -2,9 +2,7 @@ import java.util.*;
 
 public class MonkeySim {
 
-	private static List<Monkey> monkeyList = new LinkedList<Monkey>();
-
-	public static final int HEADER = 50000;
+	private static final int HEADER = 50000;
 
 	/**
 	 * Print out use message and exit with error code 1.
@@ -54,7 +52,7 @@ public class MonkeySim {
 	 * @return Monkey first monkey in list
 	 */
 
-	public static Monkey getFirstMonkey(List<Monkey> ml) {
+	public Monkey getFirstMonkey(List<Monkey> ml) {
 
 		int x = ml.size() - 1;
 		int f = x * 33;
@@ -85,7 +83,7 @@ public class MonkeySim {
 	 * @return String string version of round
 	 */
 
-	public static String stringifyResults(int c, Monkey m, Monkey m2) {
+	public String stringifyResults(int c, Monkey m, Monkey m2) {
 		String toReturn = new String("");
 		try {
 			for (int j = 0; j < HEADER; j++) {
@@ -111,7 +109,7 @@ public class MonkeySim {
 	 * @return int number of monkey w/ banana
 	 */
 
-	public static int monkeyWithBanana(List<Monkey> ml) {
+	public int monkeyWithBanana(List<Monkey> ml) {
 		for (int j = 0; j < ml.size(); j++) {
 			Monkey m = ml.get(j);
 			if (m.hasBanana()) {
@@ -129,14 +127,14 @@ public class MonkeySim {
 
 	}
 
-	public static int addMoreMonkeys(int n, List<Monkey> ml) {
+	public int addMoreMonkeys(int n, List<Monkey> ml) {
 		while (ml.size() <= n) {
 			ml.add(new Monkey());
 		}
 		return ml.size();
 	}
 
-	public static int nextMonkeyAndResize(Monkey m, List<Monkey> ml) {
+	public int nextMonkeyAndResize(Monkey m, List<Monkey> ml) {
 		int n = m.nextMonkey();
 		if (n > ml.size()) {
 			int zarg = addMoreMonkeys(n, ml);
@@ -153,7 +151,7 @@ public class MonkeySim {
 	 * @return int number of rounds taken to get to first monkey
 	 */
 
-	public static int runSimulation(List<Monkey> ml, MonkeyWatcher mw) {
+	public int runSimulation(List<Monkey> ml, MonkeyWatcher mw) {
 		int nextMonkey = -1;
 
 		while (!getFirstMonkey(ml).hasBanana()) {
@@ -184,13 +182,15 @@ public class MonkeySim {
 		Banana b = new Banana();
 		MonkeyWatcher mw = new MonkeyWatcher();
 
+		List<Monkey> monkeyList = new LinkedList<Monkey>();
 		for (int j = 0; j < s + 1; j++) {
 			tmpMonkey = new Monkey();
 			monkeyList.add(tmpMonkey);
 		}
 		monkeyList.get(s).throwBananaTo(b);
 
-		int numRounds = runSimulation(monkeyList, mw);
+		MonkeySim monkeySim = new MonkeySim();
+		int numRounds = monkeySim.runSimulation(monkeyList, mw);
 		System.out.println("Completed in " + numRounds + " rounds.");
 	}
 }
