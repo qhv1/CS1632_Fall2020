@@ -266,11 +266,11 @@ deductions. Don't forget to add your partner to the submission.
 
 1. Create a screenshot of the VisualVM profiling result running MonkeySim with argument 27 and name it profile.png. Example:
 
-    <img alt="Code Coverage" src=profile.png width=700>
+   ![alt text](profile.png "VisualVM snapshot after optimizations")
 
-    Make sure the "Hot spots" window is activated listing the methods sorted in descending order of running time (Self Time).
+   Make sure the "Hot spots" window is activated listing the methods sorted in descending order of running time (Self Time).
 
-    After you have created the screenshot, save the picture to a PDF file and
+   After you have created the screenshot, save the picture to a PDF file and
 submit to GradeScope at the "Exercise 4 Profile" link.  Make sure the picture
 fits in one page for easy viewing and grading.
 
