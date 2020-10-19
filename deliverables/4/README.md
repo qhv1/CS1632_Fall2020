@@ -125,7 +125,8 @@ cannot write high quality unit tests before refactoring to make the code more
 testable (e.g. via dependency injection).  So you need a temporary end-to-end
 pinning test to protect the code base meanwhile.  For this deliverable, there
 is no reason you cannot write unit tests from the get-go for pinning tests as
-the dependency injection(s) has already been done for you.  
+the dependency injection(s) has already been done for you.  An example is the
+**setCells** method in MainPanel.
 
 Here are some requirements for your pinning tests:
 
@@ -135,8 +136,8 @@ Here are some requirements for your pinning tests:
    https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life#/media/File:Game_of_life_blinker.gif  
 
    The vertical bar pattern should be your precondition and the next horizontal
-bar pattern should be your postcondition.  For the postcondition, make sure you
-check all 25 cells in the 5 X 5 pattern.
+bar pattern should be your postcondition.  **For the postcondition, make sure you
+check all 25 cells in the 5 X 5 pattern**.
 
 1. You are required to localize each pinning unit test within the tested class
    as we did for Deliverable 2 (meaning it should not exercise any code from
@@ -153,7 +154,8 @@ verification appropriately.
 1. Note that even though the class is named GameOfLifePinningTest, the methods
    you test will not necessarily come from the GameOfLife class.  You will
 create whatever objects from whatever classes are necessary to test the three
-refactored methods.
+refactored methods.  Hint: there is no reason for you to create a GameOfLife
+object as there are no methods that you need to refactor there.
 
 You will write all your pinning tests in the class GameOfLifePinningTest by
 completing the TODOs.  Please heed the comments.  Just like for Deliverable 2,
