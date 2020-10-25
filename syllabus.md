@@ -123,7 +123,7 @@ AFIST = [_A Friendly Introduction to Software Testing_](software-quality-assuran
 
 * Class 1: In-class Exercise 5.1: Static Analysis Part 1 (Due before Week 12 Class 1 at 9:00 AM)
 
-* Class 2: Discuss Deliverable 5 / TopHat questions
+* Class 2: Finish Exercise 5.1 / Discuss Deliverable 5 / TopHat questions
 
 * Listen to lectures (TopHat questions due the following before Class 1 at 9:00 AM):
   * Smoke and Exploratory Testing (READING: AFIST, Chapters 10-11)
