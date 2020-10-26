@@ -603,10 +603,36 @@ failures.
 If you have trouble, try comparing your JPF outputs against these expected
 outputs:
 
-* Expected result of running "runJPF.bat DrunkCarnivalShooter.win.jpf": [jpf_drunkcarnivalshooter_run.txt](jpf_drunkcarnivalshooter_run.txt)
-* Expected result of running "runJPF.bat JUnit.win.jpf": [jpf_junit_run.txt](jpf_junit_run.txt).  This corresponds to the autograder phase 1 output.
-* Expected result of running "runJPF.bat JUnit.win.jpf" after uncommenting "target.args = buggy" in JUnit.win.jpf (or JUnit.macos.jpf): [jpf_junit_buggy_run.txt](jpf_junit_buggy_run.txt).  This corresponds to the autograder phase 2 output.
+* Result of running DrunkCarnivalShooterImpl standalone on top of JPF:
+  ```
+  runJPF.bat DrunkCarnivalShooter.win.jpf
+  ```
+  OR
+  ```
+  bash runJPF.sh DrunkCarnivalShooter.macos.jpf
+  ```
+  Expected output: [jpf_drunkcarnivalshooter_run.txt](jpf_drunkcarnivalshooter_run.txt)
 
+* Result of running DrunkCarnivalShooterTest on DrunkCarnivalShooterImpl on top of JPF. This corresponds to the autograder phase 1 output:
+  ```
+  runJPF.bat JUnit.win.jpf
+  ```
+  OR
+  ```
+  bash runJPF.sh JUnit.macos.jpf
+  ```
+  Expected output: [jpf_junit_run.txt](jpf_junit_run.txt).  
+
+* Result of running DrunkCarnivalShooterTest on DrunkCarnivalShooterBuggy on top of JPF. This corresponds to the autograder phase 2 output.  First comment "target.args = buggy" in JUnit.win.jpf or JUnit.macos.jpf, depending on your OS.  Then run:
+  ```
+  runJPF.bat JUnit.win.jpf
+  ```
+  OR
+  ```
+  bash runJPF.sh JUnit.macos.jpf
+  ```
+  Expected output: [jpf_junit_buggy_run.txt](jpf_junit_buggy_run.txt).
+  
 Minor details like elapsed time statistics can differ but the search output and
 the results output should look the same.  Also, note that now the former goes
 up to Round #4 and covers all possible 16 target configurations.
