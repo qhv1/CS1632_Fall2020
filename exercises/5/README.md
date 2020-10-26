@@ -1,3 +1,18 @@
+- [Exercise 5 - Static Analysis Part 1: Linters and Bug Finders](#exercise-5---static-analysis-part-1--linters-and-bug-finders)
+  * [DrunkCarnivalShooter](#drunkcarnivalshooter)
+  * [Applying SpotBugs and CheckStyle](#applying-spotbugs-and-checkstyle)
+    + [Lessons on Pattern Matching](#lessons-on-pattern-matching)
+  * [Submission](#submission)
+  * [Resources](#resources)
+- [Exercise 5 - Static Analysis Part 2: Model Checking](#exercise-5---static-analysis-part-2--model-checking)
+  * [Applying Java Pathfinder (JPF)](#applying-java-pathfinder--jpf-)
+    + [Applying JPF on Rand](#applying-jpf-on-rand)
+    + [Applying JPF on DrunkCarnivalShooter](#applying-jpf-on-drunkcarnivalshooter)
+    + [Applying JPF on JUnit to Unit Test DrunkCarnivalShooter](#applying-jpf-on-junit-to-unit-test-drunkcarnivalshooter)
+    + [Lessons on Model Checking](#lessons-on-model-checking)
+  * [Submission](#submission-1)
+  * [Resources](#resources-1)
+
 # Exercise 5 - Static Analysis Part 1: Linters and Bug Finders
 
 * DUE: Oct 28, 2020 09:00 AM (Mon/Wed class)
@@ -44,7 +59,7 @@ an exception immediately at start up:
 $ java -cp bin;jpf-core/build/* DrunkCarnivalShooterImpl
 Exception in thread "main" java.lang.NullPointerException
         at DrunkCarnivalShooterImpl.<init>(DrunkCarnivalShooterImpl.java:31)
-        at DrunkCarnivalShooterImpl.main(DrunkCarnivalShooterImpl.java:149)
+        at DrunkCarnivalShooterImpl.main(DrunkCarnivalShooterImpl.java:150)
 ```
 
 In this exercise, we are going to try to debug the program using static
@@ -95,6 +110,10 @@ $ java -jar spotbugs-4.0.0-beta4/lib/spotbugs.jar
 The following link contains a short tutorial on how to use the GUI:
 https://spotbugs.readthedocs.io/en/latest/gui.html
 
+SpotBugs will complain about among other things a warning type called "ST_WRITE_TO_STATIC_FROM_INSTANCE_METHOD".  Look up the meaning of this error type in the above SpotBugs reference.  It is saying that you should not update a static variable from an instance method.  I have seen many of you do this a lot in your assignments.  You would declare variables that should really be instance variables to be static.  I don't know where you picked up that programming habit, but that goes against all OOP principles.  If you are still unsure about when to use static and when to use instance variables, here is a good tutorial:
+
+https://docs.oracle.com/javase/tutorial/java/javaOO/classvars.html
+
 After removing all warnings, you should see the following ouput for each.
 
 Checkstyle output:
@@ -108,7 +127,7 @@ Audit done.
 SpotBugs output:
 
 ```
-$ java -jar spotbugs-4.0.0-beta4/lib/spotbugs.jar -textui -low -effort:max -longBugCodes bin/*.class
+$ java -jar spotbugs-4.0.0-beta4/lib/spotbugs.jar -textui -low -effort:max -longBugCodes -exclude spotbugs-4.0.0-beta4/my_exclude_filter.xml bin/*.class
 The following classes needed for analysis were missing:
   org.junit.runner.JUnitCore
   org.junit.runner.Result
