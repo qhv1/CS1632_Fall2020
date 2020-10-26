@@ -604,8 +604,8 @@ If you have trouble, try comparing your JPF outputs against these expected
 outputs:
 
 * Expected result of running "runJPF.bat DrunkCarnivalShooter.win.jpf": [jpf_drunkcarnivalshooter_run.txt](jpf_drunkcarnivalshooter_run.txt)
-* Expected result of running "runJPF.bat JUnit.win.jpf": [jpf_junit_run.txt](jpf_junit_run.txt)
-* Expected result of running "runJPF.bat JUnit.win.jpf" after uncommenting "target.args = buggy" in JUnit.win.jpf (or JUnit.macos.jpf): [jpf_junit_run.txt](jpf_junit_buggy_run.txt)
+* Expected result of running "runJPF.bat JUnit.win.jpf": [jpf_junit_run.txt](jpf_junit_run.txt).  This corresponds to the autograder phase 1 output.
+* Expected result of running "runJPF.bat JUnit.win.jpf" after uncommenting "target.args = buggy" in JUnit.win.jpf (or JUnit.macos.jpf): [jpf_junit_buggy_run.txt](jpf_junit_buggy_run.txt).  This corresponds to the autograder phase 2 output.
 
 Minor details like elapsed time statistics can differ but the search output and
 the results output should look the same.  Also, note that now the former goes
