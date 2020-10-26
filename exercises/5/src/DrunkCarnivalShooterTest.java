@@ -59,8 +59,8 @@ public class DrunkCarnivalShooterTest {
 	 * Test case for boolean shoot(int t, StringBuilder builder).
 	 * 
 	 * <p>Preconditions: Create StringBuilder builder = new StringBuilder();
-	 * <br>Execution steps: Call shooter.shoot(targetChoice, builder);
-	 * <br>Invariant: The number of targets which returns true on shooter.isTargetStanding(i)
+	 * Execution steps: Call shooter.shoot(targetChoice, builder);
+	 * Invariant: The number of targets which returns true on shooter.isTargetStanding(i)
 	 *            where i = 0 ... 3 is equal to shooter.getRemainingTargetNum().
 	 */
 	@Test
@@ -72,9 +72,7 @@ public class DrunkCarnivalShooterTest {
 		 * cases considered by Java Path Finder. If you called the Verify API correctly
 		 * in setUp(), you should see all combinations of targets and targetChoices:
 		 * 
-		 * Failure in Round #0: (targetChoice=0):
-		 * Failure in Round #0:
-		 *  ||
+		 * Failure in Round #0: (targetChoice=0): Failure in Round #0: ||
 		 * (targetChoice=0): Failure in Round #0: || (targetChoice=0): Failure in Round
 		 * #0: || || (targetChoice=0): Failure in Round #0: || (targetChoice=0): ...
 		 * Failure in Round #0: || || || (targetChoice=3): Failure in Round #0: || || ||

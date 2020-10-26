@@ -7,9 +7,6 @@
 import java.util.ArrayList;
 import java.util.Random;
 import java.util.Scanner;
-import gov.nasa.jpf.annotation.FilterField;
-import gov.nasa.jpf.vm.Verify;
-
 
 public class DrunkCarnivalShooterImpl implements DrunkCarnivalShooter {
 	private static Random rand;
@@ -17,7 +14,7 @@ public class DrunkCarnivalShooterImpl implements DrunkCarnivalShooter {
 	private static ArrayList<Boolean> targets;
 	private static int remainingTargetNum;
 
-	@FilterField private static int roundNum;
+	private static int roundNum;
 
 	/**
 	 * Constructor. Creates 4 targets for the player to shoot. Not a particularly
@@ -28,6 +25,7 @@ public class DrunkCarnivalShooterImpl implements DrunkCarnivalShooter {
 	DrunkCarnivalShooterImpl() {
 		rand = new Random();
 		targets = new ArrayList<Boolean>();
+		targets = null;
 		remainingTargetNum = 4;
 		for (int i = 0; i < remainingTargetNum; i++) {
 			targets.add(true);
@@ -123,7 +121,7 @@ public class DrunkCarnivalShooterImpl implements DrunkCarnivalShooter {
 	 * @param t the target number
 	 */
 	public boolean isTargetStanding(int t) {
-		return t >= 0 && t < targets.size() && targets.get(t);
+		return targets.get(t);
 	}
 
 	/**
@@ -150,16 +148,11 @@ public class DrunkCarnivalShooterImpl implements DrunkCarnivalShooter {
 	 */
 	public static void main(String[] args) {
 		DrunkCarnivalShooterImpl shooter = new DrunkCarnivalShooterImpl();
-		Scanner scanner = new Scanner(System.in);
+		Scanner scanner = new Scanner(System.in, "UTF-8");
 		while (true) {
 			System.out.println(shooter.getRoundString());
 			System.out.println("Choose your target (0-3): ");
-			int t;
-			if (args.length > 0 && args[0].equalsIgnoreCase("test")) {
-				t = Verify.getInt(0, 3);
-			} else {
-				t = scanner.nextInt();
-			}
+			int t = scanner.nextInt();
 
 			// Shoot the target
 			StringBuilder builder = new StringBuilder();

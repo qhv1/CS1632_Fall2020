@@ -186,20 +186,19 @@ this one (see next section).
 
 ## Submission
 
-Each pairwise group will do one submission by *one member* of the group.  The
-submitting member will press the "View or edit group" link at the top-right
-corner of the assignment page after submission to add his/her partner.  
+There is no submission for this exercise.  For CheckStyle and SpotBugs, if you
+don't get any more warnings you've done your job.  As to JPF, this is the
+output you should expect to see.
 
-As usual, you will create a github repository just for exercise 5.  Add your
-partner as a collaborator so both of you have access.  Make sure you keep the
-repository *PRIVATE* so that nobody else can access your repository.  When you
-are done, submit your github repository to GradeScope at the "Exercise 5 Part 1
-GitHub" link.  Once you submit, GradeScope will run the autograder to grade you
-and give feedback.  If you get deductions, fix your code based on the feedback
-and resubmit.  Repeat until you don't get deductions.
+* Result of running "runJPF.bat DrunkCarnivalShooter.win.jpf": [jpf_drunkcarnivalshooter_run.txt](jpf_drunkcarnivalshooter_run.txt)
+* Result of running "runJPF.bat JUnit.win.jpf": [jpf_junit_run.txt](jpf_junit_run.txt)
 
-If you don't get any warnings you've done your job.  Otherwise, it is -1 point
-per CheckStyle or SpotBugs warning.
+Minor details like elapsed time can differ but pay special attention to the
+number of new states.  In the case of the former, there are 233 new states.
+For the latter, there are 141 new states.  Also, note that now the former goes
+up to Round #4 to cover all possible 16 target configurations.
+
+If you are still not sure, show me during lecture times or office hours. :)
 
 ## Resources
 
@@ -344,10 +343,10 @@ gov.nasa.jpf.vm.NoUncaughtExceptionsProperty
 java.lang.ArrayIndexOutOfBoundsException: -1
         at java.util.ArrayList.elementData(java/util/ArrayList.java:422)
         at java.util.ArrayList.get(java/util/ArrayList.java:435)
-        at DrunkCarnivalShooterImpl.isTargetStanding(DrunkCarnivalShooterImpl.java:125)
-        at DrunkCarnivalShooterImpl.takeDownTarget(DrunkCarnivalShooterImpl.java:109)
-        at DrunkCarnivalShooterImpl.shoot(DrunkCarnivalShooterImpl.java:90)
-        at DrunkCarnivalShooterImpl.main(DrunkCarnivalShooterImpl.java:165)
+        at DrunkCarnivalShooterImpl.isTargetStanding(DrunkCarnivalShooterImpl.java:78)
+        at DrunkCarnivalShooterImpl.takeDownTarget(DrunkCarnivalShooterImpl.java:69)
+        at DrunkCarnivalShooterImpl.shoot(DrunkCarnivalShooterImpl.java:58)
+        at DrunkCarnivalShooterImpl.main(DrunkCarnivalShooterImpl.java:97)
 ...
 ```
 
@@ -559,39 +558,8 @@ such as no exceptions.
 
 ## Submission
 
-When you are done, submit your github repository to GradeScope at the "Exercise
-5 Part 2 GitHub" link.  Once you submit, GradeScope will run the autograder to
-grade you and give feedback.  If you get deductions, fix your code based on the
-feedback and resubmit.  Repeat until you don't get deductions.
-
-## GradeScope Feedback
-
-The GradeScope autograder works in 2 phases:
-
-1. DrunkCarnivalShooterTest on DrunkCarnivalShooterImpl
-
-   This is testing the DrunkCarnivalShooterTest JUnit class on
-DrunkCarnivalShooterImpl, with the help of JPF to do exhaustive state space
-exploration.  If your implementation is bug-free (as it should be at this
-point), the test should pass for all explored states.
-
-1. DrunkCarnivalShooterTest on DrunkCarnivalShooterBuggy
-
-   This is testing the DrunkCarnivalShooterTest JUnit class on
-DrunkCarnivalShooterBuggy, again with the help of JPF.
-DrunkCarnivalShooterBuggy is a buggy implementation so JPF should be able to
-find 
-
- to do exhaustive state space
-exploration.  If your implementation is bug-free (as it should be at this
-point), the test should pass for all explored states.
-
-1. RentACatTest.(some method) on RentACatSolution: RentACatTest is your submitted JUnit test for RentACat.  The purpose of this phase is to test RentACatTest itself for defects.  RentACatSolution is the solution implementation of RentACat and contains no defects (that I know of).  Hence, all tests in RentACatTest should pass.
-1. RentACatTest.(some method) on RentACatBuggy: RentACatTest is your submitted JUnit test for RentACat and you are testing against the buggy RentACatBuggy implementation.  The purpose of this phase is to further test RentACatTest for defects.  It does this by testing whether RentACatTest finds all the bugs that RentACatTestSolution is able to find within RentACatBuggy.
-If you see test failures, read the feedback given by the autograder, fix your code, and retry.
-
-
-As to JPF, this is the
+There is no submission for this exercise.  For CheckStyle and SpotBugs, if you
+don't get any more warnings you've done your job.  As to JPF, this is the
 output you should expect to see.
 
 * Result of running "runJPF.bat DrunkCarnivalShooter.win.jpf": [jpf_drunkcarnivalshooter_run.txt](jpf_drunkcarnivalshooter_run.txt)
