@@ -72,13 +72,21 @@ public class DrunkCarnivalShooterTest {
 		 * cases considered by Java Path Finder. If you called the Verify API correctly
 		 * in setUp(), you should see all combinations of targets and targetChoices:
 		 * 
-		 * Failure in Round #0: (targetChoice=0): Failure in Round #0: ||
-		 * (targetChoice=0): Failure in Round #0: || (targetChoice=0): Failure in Round
-		 * #0: || || (targetChoice=0): Failure in Round #0: || (targetChoice=0): ...
-		 * Failure in Round #0: || || || (targetChoice=3): Failure in Round #0: || || ||
-		 * (targetChoice=3): Failure in Round #0: || || || || (targetChoice=3):
+		 * Failure in Round #0:                         (targetChoice=0):
+		 * Failure in Round #0:                    ||   (targetChoice=0):
+		 * Failure in Round #0:              ||         (targetChoice=0):
+		 * Failure in Round #0:              ||    ||   (targetChoice=0):
+		 * Failure in Round #0:        ||               (targetChoice=0):
+		 * Failure in Round #0:        ||          ||   (targetChoice=0):
+		 * Failure in Round #0:        ||    ||         (targetChoice=0):
+		 * Failure in Round #0:        ||    ||    ||   (targetChoice=0):
+		 * Failure in Round #0:  ||                     (targetChoice=0):
+		 * ...
+		 * Failure in Round #0:  ||    ||          ||   (targetChoice=3):
+		 * Failure in Round #0:  ||    ||    ||         (targetChoice=3):
+		 * Failure in Round #0:  ||    ||    ||    ||   (targetChoice=3):
 		 * 
-		 * PLEASE REMOVE when you are done implementing.
+		 * PLEASE COMMENT OUT when you are done implementing.
 		 */
 		System.out.println(failString);
 	}
