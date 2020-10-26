@@ -613,7 +613,7 @@ outputs:
   ```
   Expected output: [jpf_drunkcarnivalshooter_run.txt](jpf_drunkcarnivalshooter_run.txt)
 
-* Result of running DrunkCarnivalShooterTest on DrunkCarnivalShooterImpl on top of JPF. This corresponds to the autograder phase 1 output:
+* Result of running DrunkCarnivalShooterTest on DrunkCarnivalShooterImpl on top of JPF. Corresponds to the autograder phase 1 output:
   ```
   runJPF.bat JUnit.win.jpf
   ```
@@ -623,7 +623,7 @@ outputs:
   ```
   Expected output: [jpf_junit_run.txt](jpf_junit_run.txt).  
 
-* Result of running DrunkCarnivalShooterTest on DrunkCarnivalShooterBuggy on top of JPF. This corresponds to the autograder phase 2 output.  First comment "target.args = buggy" in JUnit.win.jpf or JUnit.macos.jpf, depending on your OS.  Then run:
+* Result of running DrunkCarnivalShooterTest on DrunkCarnivalShooterBuggy on top of JPF. Corresponds to the autograder phase 2 output.  First uncomment "target.args = buggy" in JUnit.win.jpf or JUnit.macos.jpf, depending on your OS.  Then run:
   ```
   runJPF.bat JUnit.win.jpf
   ```
