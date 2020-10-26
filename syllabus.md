@@ -131,7 +131,7 @@ AFIST = [_A Friendly Introduction to Software Testing_](software-quality-assuran
   
 ## WEEK 12 (Week of 2 NOV)
 
-* Class 1: Discuss Deliverable 5 / Finish Exercise 5.2
+* Class 1: Discuss Deliverable 5 / Finish Exercise 5 Part 2
 
 * Class 2: Discuss Exercise 5 / TopHat questions
 
