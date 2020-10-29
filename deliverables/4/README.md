@@ -7,7 +7,8 @@ DUE: Nov 2 (Monday), 2020 09:00 AM
 
 For this assignment, your group will profile a Conway's Game of Life
 simulation, and improve its performance by refactoring several methods (to be
-determined by the results of the profiling).  This will consist of several
+determined by the results of the profiling).  The program is functionally correct.
+It's only problem is that certain features are too slow.  This will consist of several
 parts:
 
 1. Profiling (before) to determine which method is the most CPU-intensive
