@@ -139,13 +139,15 @@ AFIST = [_A Friendly Introduction to Software Testing_](software-quality-assuran
 
 ## WEEK 13 (Week of 9 NOV)
 
-* Nov. 10 (Tuesday): SAP Guest Lecture on UI Testing
+* Nov. 10 (Tuesday) 9:25-10:40 : SAP Guest Lecture on UI Testing
 
-* Nov. 12 (Thursday): SAP Guest Lecture on Performance Testing
+* Nov. 11 (Wednesday) 9:25-10:40 : Forcepoint Guest Lecture
+
+* Nov. 12 (Thursday) 9:25-10:40 : SAP Guest Lecture on Performance Testing
 
 ## WEEK 14 (Week of 16 NOV)
 
-* Nov. 18 (Wednesday): Naval Nuclear Laboratory Guest Lecture on Testing in a DoD Lab
+* Nov. 18 (Wednesday) 9:25-10:40 : Naval Nuclear Laboratory Guest Lecture on Testing in a DoD Lab
 
 * Midterm 2: TBD on GradeScope
   * Take home exam submitted online
