@@ -93,10 +93,10 @@ profiler, determine the THREE methods you can modify to measurably increase the
 speed of the application without modifying behavior.  Refer to Exercise 4 for a
 detailed explanation of how to use VisualVM to profile an application.
 
-Now there is one more step that you have to do on VisualVM not explained in
+Now there is one more step that you have to do on VisualVM you did not have to do in
 Exercise 4: you need to replace "GameOfLife" with "*" in the "Profile classes:"
 window on the right before pressing on the "CPU" button to start profiling.
-This instructs VisualVM to not only the GameOfLife class (the class with the
+This instructs VisualVM to instrument not only the GameOfLife class (the class with the
 main method), but all classes in the application.  You did not need to do this
 for the Exercise 4 MonkeySim application because it was single-threaded
 application.  All code in a single-threaded application execute starting from
