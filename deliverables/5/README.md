@@ -223,14 +223,14 @@ Here is a list of files and their contents:
 * BeanCounterLogicImpl.java - The core logic of the bean machine.  Maintains a
   list of beans that fall one step in the machine whenever advanceStep() is
 called.  Maps beans into a logical coordinate system.  Also contains a main
-method which implements the Text UI of the program. (modify)
+method which implements the Text UI of the program. (**modify**)
 
 * BeanImpl.java - The Bean implementation.  Maintains the x-coordinate of the
   bean, as well as how many right moves are remaining if in skill mode.
 Governs the movement of that particular bean when choose() is called, depending
 on whether the bean is a skilled bean or a lucky bean.  The Random number
 generator that gives randomness to the movement is injected in the BeanImpl
-constructor for easier testing. (modify)
+constructor for easier testing. (**modify**)
 
 * BeanCounterLogicTest.java - The JUnit test class for the BeanCounterLogicImpl
   class.  Depending on Config, it either runs in plain JUnit mode or JPF on
@@ -240,7 +240,7 @@ mode).  Also the Random number generator is seeded with 42 to make tests
 reproducible.  In JPF on JUnit mode, you are asked to exhaustively test
 different machine configurations (see [Model Checking Using
 JUnit](#model-checking-using-junit)) and all random numbers will be
-exhaustively tested too. (modify)
+exhaustively tested too. (**modify**)
 
 * Config.java - The high level configuration of the program.  Controls
   LogicType (your impl, buggy, or solution) and TestType (plain JUnit or JPF on
