@@ -33,13 +33,16 @@ addition, there is a [Text UI mode](#text-ui-mode) that you can use to test
 and debug most of your program.
 
 All the projects so far have used some form of dynamic testing.  In this
-project, we will focus on static testing.  You are still well-advised to use
-all the techniques we have learned so far: test-driven development (TDD),
-automated unit testing, code coverage, and manual testing to name a few.  But
-you will not be required to submit a proof of testing.  What you will be graded
+project, we will focus grading on static testing.  You will be graded
 upon is static testing techniques such as: linting, pattern-based bug finding,
-and model checking.  Also, as always, you will be graded upon the quality of
-the software itself.
+and model checking.  
+
+But you are still expected to use
+all the techniques we have learned so far: test-driven development (TDD),
+automated unit testing, code coverage, and manual testing to name a few to come
+up with good quality software.  The GradeScope autograder will do extensive testing
+to test various features of the software.  If any of the tests fail, that means
+you have not thoroughly tested your software.
 
 * IMPORTANT: You need Java 8 (1.8.0.231, preferably) to run the Java Path
   Finder model checker.  Make sure you have the correct Java version by doing
